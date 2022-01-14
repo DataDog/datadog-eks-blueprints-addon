@@ -1,60 +1,56 @@
-# ssp-eks-extension
-Supplemental repository that shows how to create extensions for https://github.com/aws-quickstart/ssp-amazon-eks
+# Datadog add-on for AWS SSP
 
-# Prerequisites
+> **This project is currently in Beta**
 
-Instructions are provided for MacOS. For Linux and Windows please consult documentation how to install the required components (`make`, `nodejs`). Please consider contributing to this guide.
+## Overview
 
-1. Install Make on Mac.
-```
-$ sudo brew install make
-```
-2. Install Node.js.
-```
-$ sudo brew install node
-```
+The Datadog SSP add-on deploys the Datadog Agent on Amazon EKS using the [ssp-amazon-eks](https://github.com/aws-quickstart/ssp-amazon-eks) [CDK](https://aws.amazon.com/cdk/) construct.
 
-Make sure that the installed Node.js version is compatible with CDK. More information can be found [here](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#:~:text=All%20AWS%20CDK,a%20different%20recommendation.) (scroll to the "Prerequisites" section).
-
-3. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and provide credentials by running `aws configure`. 
-
-4. In order to avoid problems with CDK version potentially being different from the version used by the AWS SSP for EKS create a local alias for CDK (as opposed to system wide installation). For that include the following alias to your ~/.bashrc or ~/.zshrc file:
+## Installation
 
 ```
-alias cdk="npx cdk"
-```
-Make sure you run `source ~/.bashrc` after editing the file. 
-
-Example for mac/linux terminal:
-
-```
-$ echo 'alias cdk="npx cdk"' >> ~/.zshrc
-$ source ~/.zshrc
+npm install @datadog/ssp-addon-datadog
 ```
 
-5. Clone this git repository
+## Usage
+
+```js
+import 'source-map-support/register';
+import * as cdk from '@aws-cdk/core';
+import * as ssp from '@aws-quickstart/ssp-amazon-eks';
+import { DatadogAddOn } from '@datadog/ssp-addon-datadog';
+
+const app = new cdk.App();
+
+const addOns: Array<ssp.ClusterAddOn> = [
+    new DatadogAddOn({
+        // Kubernetes secret holding Datadog API key
+        // The value should be set with the `api-key` key in the secret object.
+        apiKeyExistingSecret: '<secret name>'
+    })
+];
+
+const account = '<aws account id>'
+const region = '<aws region>'
+const props = { env: { account, region } }
+
+new ssp.EksBlueprint(app, { id: '<eks cluster name>', addOns}, props)
 ```
-git clone https://github.com/shapirov103/ssp-eks-extension.git
-cd ssp-eks-extension
-```
 
-6. Modify package.json and provide your name for the package including your organization. Example:
-```
-"name": "@mycompany/ssp-addon-myproduct"
-``` 
-Where 'myproduct' should be replaced with the name of your product. 
+## Add-on Options
 
-7. Apply other dependencies to the package.json and make sure that the CDK version used in the file is the one that is used by the SSP EKS Quickstart, which can be looked up on the [Getting Started Page](https://github.com/aws-quickstart/ssp-amazon-eks#getting-started) or directly in the [package.json](https://github.com/aws-quickstart/ssp-amazon-eks/blob/main/package.json).
+| Option                  | Description                                         | Default                       |
+|-------------------------|-----------------------------------------------------|-------------------------------|
+| `apiKey`                | Your Datadog API key                                | ""                            |
+| `appKey`                | Your Datadog APP key                                | ""                            |
+| `apiKeyExistingSecret`  | Existing k8s Secret holding the API key             | ""                            |
+| `appKeyExistingSecret`  | Existing k8s Secret holding the APP key             | ""                            |
+| `namespace`             | Namespace where to install the Datadog Agent    | "default"                     |
+| `version`               | Version of the Datadog Helm chart               | "2.28.13"                     |
+| `release`               | Name of the Helm release                        | "datadog"                     |
+| `repository`            | Repository of the Helm chart                    | "https://helm.datadoghq.com"  |
+| `values`                | Configuration values passed to the chart, options are documented [here](https://github.com/DataDog/helm-charts/tree/main/charts/datadog#all-configuration-options) | {}                            |
 
-8.  Run `npm i`.
+## Support
 
-9. Apply changes to `lib/index.ts` to implement your add-on. Note. the quickstart provides convenience base class `HelmAddOn` for add-ons that leverage a helm chart. It has a few advantages, including ability to use GitOps for add-on management.
-
-10. Apply changes to `bin/main.ts` to test your add-on.
-
-11. Run `make build`, `make lint`, `cdk list` to build. 
-12. Run `cdk deploy` to test the blueprint with deployment to AWS.
-13. Use Jest test framework for any unit tests.
-14. Run `npm publish` to publish your add-on to npm. 
-15. Create documentation, populate README on the repo. 
-16. Create an example pattern and documentation that could be submitted to https://github.com/aws-samples/ssp-eks-patterns
+https://www.datadoghq.com/support/
