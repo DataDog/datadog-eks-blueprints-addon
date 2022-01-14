@@ -45,7 +45,7 @@ new ssp.EksBlueprint(app, { id: '<eks cluster name>', addOns}, props)
 | `appKey`                | Your Datadog APP key                                | ""                            |
 | `apiKeyExistingSecret`  | Existing k8s Secret holding the API key             | ""                            |
 | `appKeyExistingSecret`  | Existing k8s Secret holding the APP key             | ""                            |
-| `namespace`             | The namespace where to install the Datadog Agent    | "default"                     |
+| `namespace`             | Namespace where to install the Datadog Agent    | "default"                     |
 | `version`               | Version of the Datadog Helm chart               | "2.28.13"                     |
 | `release`               | Name of the Helm release                        | "datadog"                     |
 | `repository`            | Repository of the Helm chart                    | "https://helm.datadoghq.com"  |
