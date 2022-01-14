@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Datadog SSP add-on allows deploying the Datadog Agent on Amazon EKS using the [ssp-amazon-eks](https://github.com/aws-quickstart/ssp-amazon-eks) [CDK](https://aws.amazon.com/cdk/) construct.
+The Datadog SSP add-on deploys the Datadog Agent on Amazon EKS using the [ssp-amazon-eks](https://github.com/aws-quickstart/ssp-amazon-eks) [CDK](https://aws.amazon.com/cdk/) construct.
 
 ## Installation
 
