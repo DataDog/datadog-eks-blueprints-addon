@@ -1,5 +1,5 @@
 {
-  "name": "ssp-eks-extension-sample",
+  "name": "@datadog/ssp-addon-datadog",
   "version": "0.1.0",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",

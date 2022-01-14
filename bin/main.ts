@@ -1,14 +1,17 @@
 import { App } from '@aws-cdk/core';
 import * as ssp from '@aws-quickstart/ssp-amazon-eks';
-import { MyFluentBitAddOn } from '../dist';
+import { DatadogAddOn } from '../dist';
 
 const app = new App();
+const account = '<account id>'
+const region = '<region>'
+const stackID = '<stack id>'
+const stackProps = { env: { account, region } }
 
 ssp.EksBlueprint.builder()
-    .addOns(new ssp.MetricsServerAddOn)
-    .addOns(new ssp.ClusterAutoScalerAddOn)
-    .addOns(new ssp.addons.SSMAgentAddOn)
-    .addOns(new MyFluentBitAddOn({
-        cloudWatchRegion: 'us-east-1'
+    .addOns(new DatadogAddOn({
+        // One of these must be uncommented and configured
+        // apiKey: '<api key>',
+        // apiKeyExistingSecret: '<secret name>'
     }))
-    .build(app, 'my-extension-test-blueprint');
+    .build(app, stackID, stackProps);
