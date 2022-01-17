@@ -13,10 +13,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "watch": "tsc -w",
-    "test": "jest",
-    "cdk": "cdk",
-    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",

@@ -12,6 +12,6 @@ jobs:
           node-version: '16.x'
       - run: |
           yarn
-          yarn publish --access=public --tag=beta
+          make build && yarn publish --access=public --tag=beta
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
