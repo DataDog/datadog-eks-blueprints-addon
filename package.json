@@ -3,8 +3,8 @@
   "description": "Datadog add-on for AWS SSP CDK",
   "author": "Datadog Inc",
   "version": "0.0.1-beta.1",
-  "main": "dist/lib/index.js",
-  "types": "dist/lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "eks-ssp-patterns": "dist/bin/main.js"
   },
