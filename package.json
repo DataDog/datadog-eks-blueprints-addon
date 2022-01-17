@@ -2,7 +2,7 @@
   "name": "@datadog/ssp-addon-datadog",
   "description": "Datadog add-on for AWS SSP CDK",
   "author": "Datadog Inc",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -29,9 +29,9 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-quickstart/ssp-amazon-eks": "^0.12.3",
-    "@aws-cdk/core": "1.135.0",
     "@aws-cdk/aws-iam": "1.135.0",
+    "@aws-cdk/core": "1.135.0",
+    "@aws-quickstart/ssp-amazon-eks": "^0.12.3",
     "source-map-support": "^0.5.16"
   }
 }
