@@ -2,7 +2,7 @@
   "name": "@datadog/ssp-addon-datadog",
   "description": "Datadog add-on for AWS SSP CDK",
   "author": "Datadog Inc",
-  "version": "0.1.0",
+  "version": "0.0.1-beta.1",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "bin": {
