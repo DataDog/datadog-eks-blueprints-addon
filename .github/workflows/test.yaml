@@ -27,3 +27,6 @@ jobs:
       - name: Lint
         run: make lint
         shell: bash
+      - name: License
+        run: make gen-license
+        shell: bash
