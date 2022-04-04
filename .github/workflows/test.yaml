@@ -27,6 +27,6 @@ jobs:
       - name: Lint
         run: make lint
         shell: bash
-      - name: License
-        run: make gen-license
+      - name: Validate LICENSE-3rdparty.csv
+        run: make validate-license
         shell: bash
