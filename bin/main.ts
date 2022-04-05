@@ -1,17 +1,20 @@
-import { App } from '@aws-cdk/core';
+import * as cdk from '@aws-cdk/core';
 import * as ssp from '@aws-quickstart/ssp-amazon-eks';
-import { DatadogAddOn } from '../dist';
+import { DatadogAddOn } from '../lib';
 
-const app = new App();
-const account = '<account id>'
-const region = '<region>'
-const stackID = '<stack id>'
-const stackProps = { env: { account, region } }
+const app = new cdk.App();
 
-ssp.EksBlueprint.builder()
-    .addOns(new DatadogAddOn({
+const addOns: Array<ssp.ClusterAddOn> = [
+    new DatadogAddOn({
         // One of these must be uncommented and configured
         // apiKey: '<api key>',
         // apiKeyExistingSecret: '<secret name>'
-    }))
-    .build(app, stackID, stackProps);
+    })
+];
+
+const account = '<account id>'
+const region = '<region>'
+const stackID = '<stack id>'
+const props = { env: { account, region } }
+
+new ssp.EksBlueprint(app, { id: stackID, addOns}, props)
