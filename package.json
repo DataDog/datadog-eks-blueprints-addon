@@ -29,9 +29,8 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "1.135.0",
-    "@aws-cdk/core": "1.135.0",
-    "@aws-quickstart/ssp-amazon-eks": "^0.12.3",
-    "source-map-support": "^0.5.16"
+    "@aws-quickstart/ssp-amazon-eks": "^0.12.12",
+    "source-map-support": "^0.5.16",
+    "ts-deepmerge": "^1.1.0"
   }
 }
