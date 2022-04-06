@@ -1,5 +1,4 @@
-import { ClusterInfo } from "@aws-quickstart/ssp-amazon-eks";
-import { Construct } from "@aws-cdk/core";
+import { ClusterInfo } from "@aws-quickstart/ssp-amazon-eks/dist/spi";
 import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from '@aws-quickstart/ssp-amazon-eks/dist/addons/helm-addon';
 import merge from "ts-deepmerge";
 
@@ -49,7 +48,7 @@ export class DatadogAddOn extends HelmAddOn {
         this.options = this.props as DatadogAddOnProps;
     }
 
-    deploy(clusterInfo: ClusterInfo): Promise<Construct> {
+    deploy(clusterInfo: ClusterInfo): void {
         let values = merge({
             datadog: {
                 apiKey: this.options.apiKey,
@@ -59,8 +58,6 @@ export class DatadogAddOn extends HelmAddOn {
             }
         }, this.options.values ?? {})
 
-        const chart = this.addHelmChart(clusterInfo, values);
-
-        return Promise.resolve(chart);
+        this.addHelmChart(clusterInfo, values);
     }
 }
