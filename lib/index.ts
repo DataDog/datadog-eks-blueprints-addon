@@ -1,6 +1,8 @@
+import merge from "ts-deepmerge";
+import { Construct } from "@aws-cdk/core";
 import { ClusterInfo } from "@aws-quickstart/ssp-amazon-eks/dist/spi";
 import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from '@aws-quickstart/ssp-amazon-eks/dist/addons/helm-addon';
-import merge from "ts-deepmerge";
+import { getSecretValue } from "@aws-quickstart/ssp-amazon-eks/dist/utils";
 
 export interface DatadogAddOnProps extends HelmAddOnUserProps {
     /**
@@ -17,16 +19,28 @@ export interface DatadogAddOnProps extends HelmAddOnUserProps {
     /**
      * Use existing Secret which stores API key instead of creating a new one.
      * The value should be set with the `api-key` key inside the secret.
-     * If set, this parameter takes precedence over "apiKey".
+     * If set, this parameter takes precedence over "apiKey" and "apiKeyAWSSecret".
      */
     apiKeyExistingSecret?: string;
 
     /**
-     * Use existing Secret which stores APP key instead of creating a new one.
+     * Use existing Secret which stores App key instead of creating a new one.
      * The value should be set with the `app-key` key inside the secret.
-     * If set, this parameter takes precedence over "appKey".
+     * If set, this parameter takes precedence over "appKey" and "appKeyAWSSecret".
      */
     appKeyExistingSecret?: string;
+
+    /**
+     * The name of the secret in AWS Secrets Manager which stores the API key.
+     * If set, this parameter takes precedence over "apiKey".
+     */
+    apiKeyAWSSecret?: string;
+
+    /**
+     * The name of the secret in AWS Secrets Manager which stores the App key.
+     * If set, this parameter takes precedence over "appKey".
+     */
+    appKeyAWSSecret?: string;
 }
 
 export const defaultProps: HelmAddOnProps & DatadogAddOnProps = {
@@ -48,16 +62,29 @@ export class DatadogAddOn extends HelmAddOn {
         this.options = this.props as DatadogAddOnProps;
     }
 
-    deploy(clusterInfo: ClusterInfo): void {
+    async deploy(clusterInfo: ClusterInfo): Promise<Construct> {
+        let apiKeyValue: string | undefined
+        let appKeyValue: string | undefined
+
+        if (this.options.apiKeyAWSSecret) {
+            apiKeyValue = await getSecretValue(this.options.apiKeyAWSSecret!, clusterInfo.cluster.stack.region);
+        }
+
+        if (this.options.appKeyAWSSecret) {
+            appKeyValue = await getSecretValue(this.options.appKeyAWSSecret!, clusterInfo.cluster.stack.region);
+        }
+
         let values = merge({
             datadog: {
-                apiKey: this.options.apiKey,
-                appKey: this.options.appKey,
+                apiKey: apiKeyValue ? apiKeyValue : this.options.apiKey,
+                appKey: appKeyValue ? appKeyValue : this.options.appKey,
                 apiKeyExistingSecret: this.options.apiKeyExistingSecret,
                 appKeyExistingSecret: this.options.appKeyExistingSecret
             }
         }, this.options.values ?? {})
 
-        this.addHelmChart(clusterInfo, values);
+        const chart = this.addHelmChart(clusterInfo, values);
+
+        return Promise.resolve(chart);
     }
 }
