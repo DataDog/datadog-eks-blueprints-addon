@@ -1,5 +1,4 @@
 Component,Origin,License,Copyright
-@aws-cdk/aws-iam,github.com/aws/aws-cdk,Apache-2.0,"Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved."
 @aws-cdk/core,github.com/aws/aws-cdk,Apache-2.0,"Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved."
 @aws-quickstart/ssp-amazon-eks,github.com/aws-quickstart/ssp-amazon-eks,Apache-2.0,"Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved."
 @datadog/ssp-addon-datadog,github.com/DataDog/ssp-addon-datadog,MIT,Copyright (c) 2021 Mikhail Shapirov
