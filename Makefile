@@ -41,3 +41,9 @@ ifeq ($(shell brew ls --versions $(LIB)),)
 else
 	@echo $(LIB) is already installed, skipping.
 endif
+
+gen-license:
+	python scripts/gen-license.py
+
+validate-license:
+	python scripts/validate-license.py
