@@ -24,6 +24,7 @@
     "copyfiles": "^2.4.1",
     "eslint": "^7.26.0",
     "jest": "^26.4.2",
+    "license-checker-rseidelsohn": "^3.1.0",
     "ts-jest": "^26.2.0",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"

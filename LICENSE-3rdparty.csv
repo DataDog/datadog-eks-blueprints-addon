@@ -1,0 +1,17 @@
+Component,Origin,License,Copyright
+@aws-cdk/core,github.com/aws/aws-cdk,Apache-2.0,"Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved."
+@aws-quickstart/ssp-amazon-eks,github.com/aws-quickstart/ssp-amazon-eks,Apache-2.0,"Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved."
+@datadog/ssp-addon-datadog,github.com/DataDog/ssp-addon-datadog,MIT,Copyright (c) 2021 Mikhail Shapirov
+@types/jest,github.com/DefinitelyTyped/DefinitelyTyped,MIT,Copyright (c) Microsoft Corporation.
+@types/node,github.com/DefinitelyTyped/DefinitelyTyped,MIT,Copyright (c) Microsoft Corporation.
+@typescript-eslint/eslint-plugin,github.com/typescript-eslint/typescript-eslint,MIT,Copyright (c) 2019 TypeScript ESLint and other contributors
+@typescript-eslint/parser,github.com/typescript-eslint/typescript-eslint,BSD-2-Clause,"Copyright JS Foundation and other contributors, https://js.foundation"
+aws-cdk,github.com/aws/aws-cdk,Apache-2.0,"Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved."
+copyfiles,github.com/calvinmetcalf/copyfiles,MIT,Copyright (c) 2014-2018 Calvin Metcalf
+eslint,github.com/eslint/eslint,MIT,"Copyright JS Foundation and other contributors, https://js.foundation"
+jest,github.com/facebook/jest,MIT,"Copyright (c) Facebook, Inc. and its affiliates."
+license-checker-rseidelsohn,github.com/RSeidelsohn/license-checker-rseidelsohn,BSD-3-Clause,Copyright 2012 Yahoo Inc.
+source-map-support,github.com/evanw/node-source-map-support,MIT,Copyright (c) 2014 Evan Wallace
+ts-jest,github.com/kulshekhar/ts-jest,MIT,Copyright (c) 2016-2018
+ts-node,github.com/TypeStrong/ts-node,MIT,Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)
+typescript,github.com/Microsoft/TypeScript,Apache-2.0,Copyright (c) Microsoft Corporation. All rights reserved.
