@@ -21,4 +21,4 @@ This document summarizes the process of doing a new release of this project.
     - Set the tag and the release name to new version e.g. `v0.0.2-beta.1`
     - Click on the `Auto-generate release notes` button
     - Check the `This is a pre-release` box for alpha/beta releases
-- Once the release or the pre-release has been created, a Github Action will publish the `@datadog/ssp-addon-datadog` NPM package. Pre-releases will be tagger with a `beta` tag while releases will have the `latest` tag.
+- Once the release or the pre-release has been created, a Github Action will publish the `@datadog/datadog-eks-blueprints-addon` NPM package. Pre-releases will be tagger with a `beta` tag while releases will have the `latest` tag.

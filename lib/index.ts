@@ -1,8 +1,8 @@
 import merge from "ts-deepmerge";
-import { Construct } from "@aws-cdk/core";
-import { ClusterInfo } from "@aws-quickstart/ssp-amazon-eks/dist/spi";
-import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from '@aws-quickstart/ssp-amazon-eks/dist/addons/helm-addon';
-import { getSecretValue } from "@aws-quickstart/ssp-amazon-eks/dist/utils";
+import { Construct } from 'constructs';
+import { ClusterInfo } from "@aws-quickstart/eks-blueprints/dist/spi";
+import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from '@aws-quickstart/eks-blueprints/dist/addons/helm-addon';
+import { getSecretValue } from "@aws-quickstart/eks-blueprints/dist/utils";
 
 export interface DatadogAddOnProps extends HelmAddOnUserProps {
     /**
