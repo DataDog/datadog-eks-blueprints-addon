@@ -6,6 +6,7 @@ Component,Origin,License,Copyright
 @typescript-eslint/eslint-plugin,github.com/typescript-eslint/typescript-eslint,MIT,Copyright (c) 2019 TypeScript ESLint and other contributors
 @typescript-eslint/parser,github.com/typescript-eslint/typescript-eslint,BSD-2-Clause,"Copyright JS Foundation and other contributors, https://js.foundation"
 aws-cdk,github.com/aws/aws-cdk,Apache-2.0,"Copyright 2018-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved."
+constructs,github.com/aws/constructs,Apache-2.0,Copyright License. Subject to the terms and conditions of
 copyfiles,github.com/calvinmetcalf/copyfiles,MIT,Copyright (c) 2014-2018 Calvin Metcalf
 eslint,github.com/eslint/eslint,MIT,"Copyright JS Foundation and other contributors, https://js.foundation"
 jest,github.com/facebook/jest,MIT,"Copyright (c) Facebook, Inc. and its affiliates."
