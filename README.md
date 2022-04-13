@@ -1,28 +1,27 @@
-# Datadog add-on for AWS SSP
+# Datadog Amazon EKS Blueprints AddOn
 
 > **This project is currently in Beta**
 
 ## Overview
 
-The Datadog SSP add-on deploys the Datadog Agent on Amazon EKS using the [ssp-amazon-eks](https://github.com/aws-quickstart/ssp-amazon-eks) [CDK](https://aws.amazon.com/cdk/) construct.
+The Datadog Blueprints AddOn deploys the Datadog Agent on Amazon EKS using the [eks-blueprints](https://github.com/aws-quickstart/cdk-eks-blueprints) [CDK](https://aws.amazon.com/cdk/) construct.
 
 ## Installation
 
 ```
-npm install @datadog/ssp-addon-datadog
+npm install @datadog/datadog-eks-blueprints-addon
 ```
 
 ## Usage
 
 ```js
-import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
-import * as ssp from '@aws-quickstart/ssp-amazon-eks';
-import { DatadogAddOn } from '@datadog/ssp-addon-datadog';
+import * as cdk from 'aws-cdk-lib';
+import * as blueprints from '@aws-quickstart/eks-blueprints';
+import { DatadogAddOn } from '@datadog/datadog-eks-blueprints-addon';
 
 const app = new cdk.App();
 
-const addOns: Array<ssp.ClusterAddOn> = [
+const addOns: Array<blueprints.ClusterAddOn> = [
     new DatadogAddOn({
         // Kubernetes secret holding Datadog API key
         // The value should be set with the `api-key` key in the secret object.
@@ -34,10 +33,10 @@ const account = '<aws account id>'
 const region = '<aws region>'
 const props = { env: { account, region } }
 
-new ssp.EksBlueprint(app, { id: '<eks cluster name>', addOns}, props)
+new blueprints.EksBlueprint(app, { id: '<eks cluster name>', addOns}, props)
 ```
 
-## Add-on Options
+## AddOn Options
 
 | Option                  | Description                                         | Default                       |
 |-------------------------|-----------------------------------------------------|-------------------------------|
