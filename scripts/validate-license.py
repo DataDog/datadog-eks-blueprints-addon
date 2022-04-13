@@ -9,7 +9,7 @@ if __name__ == "__main__":
             json_deps.add(d)
         for d in data['dependencies']:
             json_deps.add(d)
-    json_deps.add('@datadog/ssp-addon-datadog')
+    json_deps.add('@datadog/datadog-eks-blueprints-addon')
 
     csv_deps = set()
     with open('LICENSE-3rdparty.csv', newline='') as csv_file:
