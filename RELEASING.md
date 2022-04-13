@@ -17,7 +17,7 @@ This document summarizes the process of doing a new release of this project.
     - Example `git tag v0.0.2-beta.1` and `git push origin v0.0.2-beta.1`
 - Get the release branch approved and merged
     - Make sure the CI is passing, as this is the commit we will be releasing!
-- Create a Github Release from the [Releases page](https://github.com/DataDog/ssp-addon-datadog/releases) with the description of changes introduced.
+- Create a Github Release from the [Releases page](https://github.com/DataDog/datadog-eks-blueprints-addon/releases) with the description of changes introduced.
     - Set the tag and the release name to new version e.g. `v0.0.2-beta.1`
     - Click on the `Auto-generate release notes` button
     - Check the `This is a pre-release` box for alpha/beta releases

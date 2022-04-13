@@ -11,7 +11,7 @@ Manually add the dependency name and the repository location in REPO_EXCEPTIONS.
 """
 REPO_EXCEPTIONS = {
     "@aws-quickstart/eks-blueprints": "https://github.com/aws-quickstart/cdk-eks-blueprints",
-    "@datadog/datadog-eks-blueprints-addon": "https://github.com/DataDog/ssp-addon-datadog"
+    "@datadog/datadog-eks-blueprints-addon": "https://github.com/DataDog/datadog-eks-blueprints-addon"
 }
 
 """
