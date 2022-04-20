@@ -2,7 +2,7 @@
   "name": "@datadog/datadog-eks-blueprints-addon",
   "description": "Datadog Amazon EKS Blueprints AddOn",
   "author": "Datadog Inc",
-  "version": "0.1.2-beta.2",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
