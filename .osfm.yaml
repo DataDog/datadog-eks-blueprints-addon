@@ -1,0 +1,2 @@
+expiration: null  # YYYY-MM-DD (leave null if the allowance should never expire)
+type: "EXTERNAL"
