@@ -6,4 +6,4 @@
 # https://datadoghq.atlassian.net/wiki/spaces/ISEC/pages/3093168822/OSFM+-+Open+Source+Fork+Monitor
 
 expiration: null  # YYYY-MM-DD (leave null if the allowance should never expire)
-type: null        # e.g.: "CI/CD", "EXTERNAL", "INTERNAL", "AGENT", etc. (leave null if unsure)
+type: "EXTERNAL"
