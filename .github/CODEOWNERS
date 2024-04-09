@@ -1,5 +1,5 @@
 # All
-*                       @DataDog/container-integrations
+*                       @DataDog/container-ecosystems
 
 # Documentation
-*.md                    @DataDog/baklava @DataDog/container-integrations
+*.md                    @DataDog/documentation @DataDog/container-ecosystems
