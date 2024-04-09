@@ -1,4 +1,4 @@
-import merge from "ts-deepmerge";
+import { merge } from "ts-deepmerge";
 import { Construct } from 'constructs';
 import { ClusterInfo } from "@aws-quickstart/eks-blueprints/dist/spi";
 import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from '@aws-quickstart/eks-blueprints/dist/addons/helm-addon';
