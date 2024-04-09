@@ -2,4 +2,4 @@
 *                       @DataDog/container-ecosystems
 
 # Documentation
-*.md                    @DataDog/baklava @DataDog/container-ecosystems
+*.md                    @DataDog/documentation @DataDog/container-ecosystems
