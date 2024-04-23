@@ -49,7 +49,7 @@ export const defaultProps: HelmAddOnProps & DatadogAddOnProps = {
     namespace: "default",
     release: "datadog",
     repository: "https://helm.datadoghq.com",
-    version: "2.32.4",
+    version: "3.59.6",
     values: {}
 };
 

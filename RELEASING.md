@@ -11,7 +11,8 @@ This document summarizes the process of doing a new release of this project.
 
 - Create and checkout a release branch
 - Update the version in `package.json` you want to release, following semver
-    - Example `yarn version --no-git-tag-version --set-version 0.0.2-beta.1`
+    - Example for Yarn 2.x.x `yarn version --no-git-tag-version --set-version 0.0.2-beta.1`
+    - Example for Yarn 4.x.x `yarn version patch` to increase patch version, see `yarn version --help` for more options.
 - Commit the changes
 - Create and push a git tag
     - Example `git tag v0.0.2-beta.1` and `git push origin v0.0.2-beta.1`
