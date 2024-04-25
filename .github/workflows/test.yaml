@@ -13,8 +13,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org/'
+      - run: |
+          rm -rf ~/.yarn
+          yarn -v
       - run: |
           yarn
-          make deps-ci && make build && yarn publish --tag=latest
+          make deps-ci && make build && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
