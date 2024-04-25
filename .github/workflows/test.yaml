@@ -15,6 +15,6 @@ jobs:
           node-version: '18.x'
       - run: |
           yarn
-          make deps-ci && make build && npm publish
+          make deps-ci && make build && yarn publish --tag=latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
