@@ -4,7 +4,10 @@ on:
   pull_request:
     branches:
       - main
-
+# Permission forced by repo-level setting; only elevate on job-level
+permissions:
+  contents: read
+  # packages: read
 jobs:
   build:
     strategy:
