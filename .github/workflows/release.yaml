@@ -2,6 +2,10 @@ name: Publish package on NPM
 on:
   release:
     types: [released]
+# Permission forced by repo-level setting; only elevate on job-level
+permissions:
+  contents: read
+  # packages: read
 jobs:
   build:
     runs-on: ubuntu-latest
