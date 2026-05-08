@@ -1,5 +1,6 @@
 {
   "name": "@datadog/datadog-eks-blueprints-addon",
+  "packageManager": "yarn@4.10.3",
   "description": "Datadog Amazon EKS Blueprints AddOn",
   "author": "Datadog Inc",
   "version": "0.1.3",
