@@ -4,10 +4,11 @@ on:
     types: [prereleased, released]
 permissions:
   contents: read
-  id-token: write
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,4 +17,4 @@ jobs:
       - run: corepack enable
       - run: yarn install
       - run: make build
-      - run: yarn npm publish --access public --tag ${{ github.event.release.prerelease == true && 'beta' || 'latest' }}
+      - run: yarn npm publish --access public --provenance --tag ${{ github.event.release.prerelease == true && 'beta' || 'latest' }}
