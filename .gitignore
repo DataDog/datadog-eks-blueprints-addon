@@ -17,4 +17,5 @@ dist
 cdk.context.json
 package-lock.json
 yarn.lock
+.yarn/
 
