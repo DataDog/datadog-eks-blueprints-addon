@@ -1,5 +1,5 @@
 # All
-*                       @DataDog/container-ecosystems
+*                       @DataDog/telemetry-onboarding
 
 # Documentation
-*.md                    @DataDog/documentation @DataDog/container-ecosystems
+*.md                    @DataDog/documentation @DataDog/telemetry-onboarding
