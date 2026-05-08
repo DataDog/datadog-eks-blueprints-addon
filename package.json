@@ -12,6 +12,10 @@
   "files": [
     "dist/**/*"
   ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "build": "rm -rf dist && tsc",
     "test": "jest"
