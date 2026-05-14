@@ -12,6 +12,10 @@
   "files": [
     "dist/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DataDog/datadog-eks-blueprints-addon"
+  },
   "publishConfig": {
     "access": "public",
     "provenance": true
