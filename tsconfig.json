@@ -21,6 +21,7 @@
         "inlineSources": true,
         "experimentalDecorators": true,
         "strictPropertyInitialization": false,
+        "resolveJsonModule": true,
         "typeRoots": [
             "./node_modules/@types"
         ]

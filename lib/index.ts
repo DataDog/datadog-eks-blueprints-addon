@@ -3,6 +3,7 @@ import { Construct } from 'constructs';
 import { ClusterInfo } from "@aws-quickstart/eks-blueprints/dist/spi";
 import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from '@aws-quickstart/eks-blueprints/dist/addons/helm-addon';
 import { getSecretValue } from "@aws-quickstart/eks-blueprints/dist/utils";
+import { version as addonVersion } from '../package.json';
 
 export interface DatadogAddOnProps extends HelmAddOnUserProps {
     /**
@@ -79,7 +80,12 @@ export class DatadogAddOn extends HelmAddOn {
                 apiKey: apiKeyValue ? apiKeyValue : this.options.apiKey,
                 appKey: appKeyValue ? appKeyValue : this.options.appKey,
                 apiKeyExistingSecret: this.options.apiKeyExistingSecret,
-                appKeyExistingSecret: this.options.appKeyExistingSecret
+                appKeyExistingSecret: this.options.appKeyExistingSecret,
+                installInfo: {
+                    tool: 'eks-blueprints-addon',
+                    toolVersion: addonVersion,
+                    installerVersion: this.options.version ?? defaultProps.version,
+                }
             }
         }, this.options.values ?? {})
 
